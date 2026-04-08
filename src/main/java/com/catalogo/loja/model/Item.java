@@ -1,22 +1,23 @@
-package com.catalogo.loja;
+package com.catalogo.loja.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class Item {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
+
+    private String codigoDoBrinquedo;
     private String descricao;
-    private String categoria;
+
+    @ManyToOne
+    @JoinColumn(name = "id_categoria")
+    private Categoria categoria; // aq
     private String marca;
     private String imagemUrl;
     private Double valor;
+    private Boolean destaque;
     
     @Column(columnDefinition = "TEXT")
     private String detalhes;
@@ -28,8 +29,8 @@ public class Item {
     public void setId(Long id) { this.id = id; }
     public String getDescricao() { return descricao; }
     public void setDescricao(String d) { this.descricao = d; }
-    public String getCategoria() { return categoria; }
-    public void setCategoria(String c) { this.categoria = c; }
+    public Categoria getCategoria() { return categoria; }
+    public void setCategoria(Categoria c) { this.categoria = c; }
     public String getMarca() { return marca; }
     public void setMarca(String m) { this.marca = m; }
     public String getImagemUrl() { return imagemUrl; }
@@ -38,4 +39,8 @@ public class Item {
     public void setValor(Double v) { this.valor = v; }
     public String getDetalhes() { return detalhes; }
     public void setDetalhes(String det) { this.detalhes = det; }
+    public String getCodigoDoBrinquedo() { return codigoDoBrinquedo; }
+    public void setCodigoDoBrinquedo(String codigoDoBrinquedo) { this.codigoDoBrinquedo = codigoDoBrinquedo; }
+    public Boolean getDestaque() { return destaque; }
+    public void setDestaque(Boolean destaque) { this.destaque = destaque; }
 }

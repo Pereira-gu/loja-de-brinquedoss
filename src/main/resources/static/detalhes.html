@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HappyKids - Detalhes do Brinquedo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <nav class="sidebar">
+            <div class="logo">
+                <img src="images/logo.png" alt="Logo HappyKids">
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="active"><a href="categorias.html">Catálogo</a></li>
+                <li><a href="adm.html">Administração</a></li> 
+                <li><a href="sobre.html">Sobre a equipe</a></li>
+            </ul>
+        </nav>
+
+        <main class="content">
+            <header>
+                <h1>HappyKids</h1> 
+                <p id="breadcrumbDetalhe">Catálogo de Brinquedos :: a carregar...</p>
+            </header>
+
+            <section class="form-section" id="produtoDetalhes" style="display: flex; gap: 40px; align-items: flex-start;">
+                
+                <div style="flex: 1; text-align: center;">
+                    <img id="imgDetalhe" src="" alt="Imagem do Brinquedo" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                </div>
+
+                <div style="flex: 2; display: flex; flex-direction: column; gap: 15px;">
+                    <h2 id="descDetalhe" style="color: #2c3e50; font-size: 2.2rem;">A carregar...</h2>
+                    
+                    <p style="font-size: 1.1rem; color: #7f8c8d;"><strong>Código:</strong> <span id="codigoDetalhe"></span></p>
+                    <p style="font-size: 1.1rem; color: #7f8c8d;"><strong>Marca:</strong> <span id="marcaDetalhe"></span></p>
+                    
+                    <p id="valorDetalhe" style="font-size: 2.5rem; color: #27ae60; font-weight: bold; margin: 15px 0;"></p>
+
+                    <div style="background: #f9f9f9; padding: 20px; border-left: 4px solid #3498db; border-radius: 4px;">
+                        <h4 style="margin-bottom: 10px; color: #34495e;">Detalhes sobre o brinquedo:</h4>
+                        <p id="textoDetalhes" style="line-height: 1.6; color: #555;"></p>
+                    </div>
+                </div>
+                
+            </section>
+        </main>
+    </div>
+
+    <script src="vitrine.js"></script>
+</body>
+</html>
